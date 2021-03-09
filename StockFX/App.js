@@ -21,26 +21,26 @@ const MainNavigator = createAppContainer(SwitchNavigator);
 export default class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       isReady: true,
     };
   }
-  
+
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
-  
+
   handleBackButton() {
     return true;
   }
-  
+
   async componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
     // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({isReady: true});
   }
-  
+
   render() {
     return this.state.isReady ? (
       <Provider store={store}>

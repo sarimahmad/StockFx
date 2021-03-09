@@ -22,7 +22,7 @@ export const WHITE = {
   borderLight: 'rgba(151, 151, 151, 0.26)',
   signInScreenBack: 'rgba(255, 255, 255, 0.56)',
   transParent: 'rgba(151, 151, 151, 0.8)',
-  light: 'rgba(204, 204, 204, 0.17)',
+  light: 'rgba(204, 204, 204, 1)',
   appLight: 'rgba(204, 204, 204, 1)',
   app: '#FFFFFF',
   textInputSelected: 'rgba(240, 240, 240, 1)',
@@ -30,6 +30,7 @@ export const WHITE = {
 
 export const BLUE = {
   app: 'rgba(21, 21, 59, 1)',
+  dark: 'rgba(16, 16, 46, 1)',
   background: 'rgba(15, 15, 45, 1)',
   light: 'rgba(164, 164, 254, 1)',
   drawerLine: 'rgba(45, 45, 128, 1)',
@@ -39,17 +40,8 @@ export const ORANGE = {
   defult: 'rgba(204, 154, 74, 1)',
 };
 
-export const INDICATORBLUE = {
-  default: 'rgba(119, 191, 255, 1)',
-};
-
 export const YELLOW = {
-  app: 'reba(255, 190, 46, 1)',
-};
-
-export const APPCOLOR = {
-  default: '#4DA59E',
-  button: '#4DA59E',
+  app: 'rgba(255, 190, 46, 1)',
 };
 
 export const GOLD = {
@@ -67,8 +59,8 @@ export const LIGHTBLUE = {
 };
 
 export const GREEN = {
-  default: 'rgba(10,140,85, 1)',
-  app: 'rgba(77, 165, 158, 1)',
+  default: 'rgba(42,204,66, 1)',
+  app: 'rgba(25, 164, 46, 1)',
   app_light: 'rgba(77, 165, 158, 0.4)',
   btn: 'rgba(141, 198, 63, 1)',
   border: 'rgba(96, 174, 116, 0.7)',
@@ -84,9 +76,8 @@ export const PURPLE = {
 };
 
 export const RED = {
-  default: 'rgba(221,10,50, 1)',
+  app: 'rgba(255,100,92, 1)',
   light: 'rgba(255,0,0, 0.4)',
-  app: 'rgba(250,77,103, 1)',
   extra_light: 'rgba(250,77,103, 0.2)',
 };
 

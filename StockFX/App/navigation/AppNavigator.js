@@ -18,10 +18,12 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import AboutUs from '../screens/AboutUs';
 import ContactUs from '../screens/ContactUs';
 import Favourite from '../screens/Favourite';
+import Landing from '../screens/Landing';
 import NewsAndFeed from '../screens/NewsAndFeed';
 import Notification from '../screens/Notification';
 import Profile from '../screens/Profile';
 import Setting from '../screens/Setting';
+import SignIn from '../screens/SignIn';
 import Splash from '../screens/Splash';
 import Stock from '../screens/Stock';
 
@@ -117,7 +119,9 @@ const CustomDrawerComponent = (props) => (
           />
         </TouchableOpacity>
       </View>
-      <View style={{backgroundColor: BLUE.drawerLine, height: 1, width: '100%'}} />
+      <View
+        style={{backgroundColor: BLUE.drawerLine, height: 1, width: '100%'}}
+      />
       <DrawerItems
         {...props}
         iconContainerStyle={{width: 20}}
@@ -129,13 +133,24 @@ const CustomDrawerComponent = (props) => (
         }}
       />
     </ScrollView>
-    <View style={{flex: 1, justifyContent:'flex-end', marginBottom: 60}}>
+    <View style={{flex: 1, justifyContent: 'flex-end', marginBottom: 60}}>
       <TouchableOpacity
         activeOpacity={0.9}
         underlayColor={BLUE.app}
         style={{flexDirection: 'row', paddingLeft: 15}}>
-        <Image style={{height: 20, width: 20, resizeMode: 'contain'}} source={require('../assets/logout.png')} />
-        <Text style={{fontSize: 14, fontFamily: FONT.bold, color: BLUE.light, marginLeft: 25}}>Logout</Text>
+        <Image
+          style={{height: 20, width: 20, resizeMode: 'contain'}}
+          source={require('../assets/logout.png')}
+        />
+        <Text
+          style={{
+            fontSize: 14,
+            fontFamily: FONT.bold,
+            color: BLUE.light,
+            marginLeft: 25,
+          }}>
+          Logout
+        </Text>
       </TouchableOpacity>
     </View>
   </SafeAreaView>
@@ -165,62 +180,82 @@ const AppDrawerNavigator = createDrawerNavigator(
         drawerLabel: 'Home',
         drawerIcon: ({focused}) => (
           <Image
-            source={focused ? require('../assets/bottomTabIcon/stock_select.png') : require('../assets/bottomTabIcon/stock_un_active.png') }
+            source={
+              focused
+                ? require('../assets/bottomTabIcon/stock_select.png')
+                : require('../assets/bottomTabIcon/stock_un_active.png')
+            }
             style={{height: 20, width: 20}}
           />
-        )
+        ),
       },
     },
-  
+
     Profile: {
       screen: Profile,
       navigationOptions: {
         drawerLabel: 'Profile',
         drawerIcon: ({focused}) => (
           <Image
-            source={focused ? require('../assets/bottomTabIcon/stock_select.png') : require('../assets/profile_drawer.png') }
+            source={
+              focused
+                ? require('../assets/bottomTabIcon/stock_select.png')
+                : require('../assets/profile_drawer.png')
+            }
             style={{height: 20, width: 20}}
           />
-        )
+        ),
       },
     },
-  
+
     ContactUs: {
       screen: ContactUs,
       navigationOptions: {
         drawerLabel: 'Contact Us',
         drawerIcon: ({focused}) => (
           <Image
-            source={focused ? require('../assets/bottomTabIcon/favourite_select.png') : require('../assets/bottomTabIcon/favourite_un_active.png') }
+            source={
+              focused
+                ? require('../assets/bottomTabIcon/favourite_select.png')
+                : require('../assets/bottomTabIcon/favourite_un_active.png')
+            }
             style={{height: 20, width: 20}}
           />
-        )
+        ),
       },
     },
-  
+
     AboutUs: {
       screen: AboutUs,
       navigationOptions: {
         drawerLabel: 'About Us',
         drawerIcon: ({focused}) => (
           <Image
-            source={focused ? require('../assets/bottomTabIcon/news_and_feed_select.png') : require('../assets/bottomTabIcon/news_and_feed.png') }
+            source={
+              focused
+                ? require('../assets/bottomTabIcon/news_and_feed_select.png')
+                : require('../assets/bottomTabIcon/news_and_feed.png')
+            }
             style={{height: 20, width: 20}}
           />
-        )
+        ),
       },
     },
-  
+
     Setting: {
       screen: Setting,
       navigationOptions: {
         drawerLabel: 'Setting',
         drawerIcon: ({focused}) => (
           <Image
-            source={focused ? require('../assets/setting_drawer.png') : require('../assets/setting_drawer.png') }
+            source={
+              focused
+                ? require('../assets/setting_drawer.png')
+                : require('../assets/setting_drawer.png')
+            }
             style={{height: 20, width: 20}}
           />
-        )
+        ),
       },
     },
   },
@@ -257,12 +292,29 @@ const MainApp = createStackNavigator({
   },
 });
 
+const Auth = createStackNavigator({
+  Landing: {
+    screen: Landing,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+  },
+  SignIn: {
+    screen: SignIn,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: true,
+    },
+  },
+});
+
 // eslint-disable-next-line no-undef
 let SwitchNavigator;
 export default SwitchNavigator = createSwitchNavigator(
   {
     App: MainApp,
-    Auth: HomeStack,
+    Auth: Auth,
     Main: HomeStack,
   },
   {
