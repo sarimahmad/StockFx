@@ -1,15 +1,20 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React from 'react';
 import {Image, Text, TouchableHighlight, View} from 'react-native';
 import {FONT} from '../../helper/Constant';
-import {RED, WHITE} from '../../helper/Color';
+import {BLUE, RED, WHITE} from '../../helper/Color';
 
 function StockListItem({item, itemPress}) {
-  const [searchToggle, setSearchToggle] = useState(false);
   return (
     <TouchableHighlight
+      underlayColor={BLUE.background}
       onPress={itemPress}
-      style={{flexDirection: 'row', width: '100%'}}>
+      style={{
+        flexDirection: 'row',
+        width: '100%',
+        borderBottomWidth: 1,
+        borderBottomColor: BLUE.drawerLine,
+      }}>
       <View
         style={{
           flexDirection: 'row',
@@ -51,7 +56,7 @@ function StockListItem({item, itemPress}) {
                 flex: 1,
                 justifyContent: 'flex-end',
                 flexDirection: 'row',
-                alignItems: 'center'
+                alignItems: 'center',
               }}>
               <Text
                 style={{

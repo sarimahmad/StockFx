@@ -83,6 +83,20 @@ const StockStyles = {
     marginVertical: 20px;
     alignItems: center;
   `,
+  ShowAllBtn: styled.TouchableHighlight`
+    height: 40px;
+    width: ${SCREEN.width - 60}px;
+    align-self: center;
+    justify-content: center;
+    alignItems: center;
+    marginBottom: 20px;
+    background-color: ${BLUE.app};
+    borderRadius: 10px;
+  `,
+  Scroll: styled.ScrollView`
+   flex: 1;
+  `,
+  
 };
 
 export default StockStyles;

@@ -17,6 +17,7 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import AboutUs from '../screens/AboutUs';
 import ContactUs from '../screens/ContactUs';
+import Detail from '../screens/Detail';
 import Favourite from '../screens/Favourite';
 import Landing from '../screens/Landing';
 import NewsAndFeed from '../screens/NewsAndFeed';
@@ -278,6 +279,10 @@ const AppDrawerNavigator = createDrawerNavigator(
 const HomeStack = createStackNavigator({
   Main: {
     screen: AppDrawerNavigator,
+    navigationOptions: {headerShown: false, gestureEnabled: true},
+  },
+  Detail: {
+    screen: Detail,
     navigationOptions: {headerShown: false, gestureEnabled: true},
   },
 });

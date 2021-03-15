@@ -58,6 +58,7 @@ export const GraphData = [
         {x: 2, y: 12},
       ],
       color: '#EFB1AE',
+      colorFrom: 'rgba(171, 255, 184, 0.8)',
       revertValue: -1,
     },
     color: RED.app,

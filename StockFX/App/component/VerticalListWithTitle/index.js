@@ -1,12 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {Image, Text, FlatList, TouchableHighlight, View} from 'react-native';
-import {FONT, isIphoneXorAbove, SCREEN} from '../../helper/Constant';
-import {BLUE, WHITE} from '../../helper/Color';
+import React from 'react';
+import {Text, FlatList, View} from 'react-native';
+import {FONT, SCREEN} from '../../helper/Constant';
+import {WHITE} from '../../helper/Color';
 import StockListItem from '../StockListItem';
 
-function VerticalListWithTitle({title, data, itemPress, searchValue}) {
-  const [searchToggle, setSearchToggle] = useState(false);
+function VerticalListWithTitle({title, data, itemPress}) {
   return (
     <View
       style={{
@@ -21,7 +20,12 @@ function VerticalListWithTitle({title, data, itemPress, searchValue}) {
       <FlatList
         data={data}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={(item, index) => <StockListItem item={item.item} itemPress={() =>itemPress(item.item)} />}
+        renderItem={(item) => (
+          <StockListItem
+            item={item.item}
+            itemPress={() => itemPress(item.item)}
+          />
+        )}
       />
     </View>
   );
