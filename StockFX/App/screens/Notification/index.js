@@ -1,13 +1,12 @@
+/* eslint-disable no-alert */
 import React, {Component} from 'react';
-import {SectionList, Text} from 'react-native';
+import {SectionList} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {NavigationEvents} from 'react-navigation';
 
 import * as Actions from '../../redux/actions';
 import NotificationStyles from './NotificationStyles';
 import NotificationHeader from '../../component/NotificationHeader';
-import {FONT} from '../../helper/Constant';
 import NotificationItem from '../../component/NotificationItem';
 
 const DATA = [
@@ -70,17 +69,14 @@ class Splash extends Component {
   render() {
     return (
       <NotificationStyles.WrapperViewVertical>
-        <NavigationEvents
-          onDidFocus={(payload) => {
-            setTimeout(() => {}, 700);
-          }}
-        />
         <NotificationHeader
           leftPress={() => this.props.navigation.openDrawer()}
           headerText={'Notifications'}
           searchValue={this.state.searchValue}
           searchChange={(searchValue) => this.setState({searchValue})}
-          settingPress={() => alert('Setting Press')}
+          settingPress={() =>
+            this.props.navigation.navigate('SettingNotification')
+          }
         />
         <NotificationStyles.SafeView>
           <NotificationStyles.SimpleView>
@@ -107,7 +103,7 @@ class Splash extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,

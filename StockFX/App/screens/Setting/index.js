@@ -18,7 +18,7 @@ class Setting extends Component {
           }}
         />
         <SettingStyles.TextScreenTextScreen>
-          notification
+          Setting
         </SettingStyles.TextScreenTextScreen>
       </SettingStyles.WrapperViewVertical>
     );

@@ -15,7 +15,7 @@ export const BLACK = {
 };
 
 export const WHITE = {
-  off: 'rgba(228, 228, 228, 1)',
+  off: 'rgba(222, 222, 255, 1)',
   dark: '#fff',
   silver: 'rgba(192, 192, 192, 1)',
   cream: 'rgba(245, 245, 245, 1)',

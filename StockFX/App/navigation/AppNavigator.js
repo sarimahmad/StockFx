@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   Animated,
@@ -24,11 +25,12 @@ import NewsAndFeed from '../screens/NewsAndFeed';
 import Notification from '../screens/Notification';
 import Profile from '../screens/Profile';
 import Setting from '../screens/Setting';
+import SettingNotification from '../screens/SettingNotification';
 import SignIn from '../screens/SignIn';
 import Splash from '../screens/Splash';
 import Stock from '../screens/Stock';
 
-import {BLACK, BLUE, GREEN, WHITE, YELLOW} from '../helper/Color';
+import {BLUE, YELLOW} from '../helper/Color';
 
 import BottomNavContainer from './BottomNav';
 import {FONT, SCREEN} from '../helper/Constant';
@@ -285,6 +287,10 @@ const HomeStack = createStackNavigator({
     screen: Detail,
     navigationOptions: {headerShown: false, gestureEnabled: true},
   },
+  SettingNotification: {
+    screen: SettingNotification,
+    navigationOptions: {headerShown: false, gestureEnabled: true},
+  },
 });
 
 const MainApp = createStackNavigator({
@@ -314,9 +320,7 @@ const Auth = createStackNavigator({
   },
 });
 
-// eslint-disable-next-line no-undef
-let SwitchNavigator;
-export default SwitchNavigator = createSwitchNavigator(
+let SwitchNavigator = createSwitchNavigator(
   {
     App: MainApp,
     Auth: Auth,
@@ -327,3 +331,4 @@ export default SwitchNavigator = createSwitchNavigator(
     transitionConfig: noTransitionConfig,
   },
 );
+export default SwitchNavigator;

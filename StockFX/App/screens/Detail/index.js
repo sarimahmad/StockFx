@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-alert */
 import React, {Component} from 'react';
-import {Slider} from 'react-native';
+import {SectionList, Slider} from 'react-native';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {NavigationEvents} from 'react-navigation';
@@ -18,6 +19,8 @@ import DetailStyles from './DetailStyles';
 import HeaderWithFavorite from '../../component/HeaderWithFavorite';
 import {BLUE, GREEN, WHITE, YELLOW} from '../../helper/Color';
 import {SCREEN} from '../../helper/Constant';
+import NotificationStyles from '../Notification/NotificationStyles';
+import NotificationItem from '../../component/NotificationItem';
 
 const commitsData = [
   {date: '2017-01-02', count: 1},
@@ -33,13 +36,61 @@ const commitsData = [
   {date: '2017-02-30', count: 4},
 ];
 
+const DATA = [
+  {
+    title: 'Last 24 hours',
+    data: [
+      {
+        name: 'Significant Price Change',
+        dateTime: '1 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: false,
+      },
+      {
+        name: 'Significant Price Change',
+        dateTime: '2 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: true,
+      },
+      {
+        name: 'Significant Price Change',
+        dateTime: '4 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: true,
+      },
+    ],
+  },
+  {
+    title: '3 days ago',
+    data: [
+      {
+        name: 'Significant Price Change',
+        dateTime: '7 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: true,
+      },
+      {
+        name: 'Significant Price Change',
+        dateTime: '5 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: true,
+      },
+      {
+        name: 'Significant Price Change',
+        dateTime: '6 Mar, 11:00',
+        detail: 'Apple is up +2.91% to $46,647.27\n' + 'on Global average...',
+        read: true,
+      },
+    ],
+  },
+];
+
 const chartConfig = {
   backgroundColor: BLUE.app,
   backgroundGradientFrom: BLUE.app,
   backgroundGradientTo: BLUE.app,
   decimalPlaces: 2, // optional, defaults to 2dp
   color: (opacity = 1) => `rgba(42, 204, 66, ${opacity})`,
-  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
   style: {
     borderRadius: 16,
   },
@@ -100,9 +151,9 @@ class Detail extends Component {
             <DetailStyles.HorizontalCategoriesList
               showsHorizontalScrollIndicator={false}
               horizontal={true}
-              keyExtractor={(item, index) => index.toString()}
+              keyExtractor={(_item, index) => index.toString()}
               data={['1H', '1D', '3D', '1W', '1M', '3M', '6M']}
-              renderItem={(items, index) => (
+              renderItem={(items, _index) => (
                 <DetailStyles.CategoryItemWrapper
                   onPress={() => this.setState({selectedIndex: items.index})}>
                   <DetailStyles.CategorySelected
@@ -383,7 +434,28 @@ class Detail extends Component {
     }
   }
   _renderAlert() {
-    return <DetailStyles.SafeView />;
+    return (
+      <DetailStyles.SafeView>
+        <NotificationStyles.SimpleView>
+          <SectionList
+            sections={DATA}
+            stickySectionHeadersEnabled={false}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({item}) => (
+              <NotificationItem
+                item={item}
+                itemPress={() => alert('Pressed')}
+              />
+            )}
+            renderSectionHeader={({section: {title}}) => (
+              <NotificationStyles.OpenSans12Regular>
+                {title}
+              </NotificationStyles.OpenSans12Regular>
+            )}
+          />
+        </NotificationStyles.SimpleView>
+      </DetailStyles.SafeView>
+    );
   }
   render() {
     const {navigation} = this.props;
@@ -391,7 +463,7 @@ class Detail extends Component {
     return (
       <DetailStyles.WrapperViewVertical>
         <NavigationEvents
-          onDidFocus={(payload) => {
+          onDidFocus={(_payload) => {
             setTimeout(() => {}, 700);
           }}
         />
@@ -439,7 +511,7 @@ class Detail extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state, _props) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,
