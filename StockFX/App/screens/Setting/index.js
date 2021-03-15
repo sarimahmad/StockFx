@@ -7,20 +7,9 @@ import * as Actions from '../../redux/actions';
 import SettingStyles from './SettingStyles';
 
 class Setting extends Component {
-
   render() {
     return (
-      <SettingStyles.WrapperViewVertical>
-        <NavigationEvents
-          onDidFocus={(payload) => {
-            setTimeout(() => {
-            }, 700);
-          }}
-        />
-        <SettingStyles.TextScreenTextScreen>
-          Setting
-        </SettingStyles.TextScreenTextScreen>
-      </SettingStyles.WrapperViewVertical>
+      <SettingStyles.WrapperViewVertical></SettingStyles.WrapperViewVertical>
     );
   }
 }
