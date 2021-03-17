@@ -142,7 +142,7 @@ class Splash extends Component {
               </StockStyles.OpenSans12Regular>
             </StockStyles.FollowedAssetsRowView>
             <VerticalListWithTitle
-              title={'Most active'}
+              title={'MOST ACTIVE'}
               itemPress={(data) =>
                 this.props.navigation.navigate('Detail', {item: data})
               }
@@ -154,7 +154,7 @@ class Splash extends Component {
               </StockStyles.OpenSans14Bold>
             </StockStyles.ShowAllBtn>
             <VerticalListWithTitle
-              title={'Top Gainers'}
+              title={'TOP GAINER'}
               itemPress={(data) =>
                 this.props.navigation.navigate('Detail', {item: data})
               }
@@ -166,7 +166,7 @@ class Splash extends Component {
               </StockStyles.OpenSans14Bold>
             </StockStyles.ShowAllBtn>
             <VerticalListWithTitle
-              title={'Top Losers'}
+              title={'TOP LOSER'}
               itemPress={(data) =>
                 this.props.navigation.navigate('Detail', {item: data})
               }

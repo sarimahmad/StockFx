@@ -69,7 +69,7 @@ function NotificationHeader({
           </View>
         ) : (
           <Text
-            style={{fontFamily: FONT.regular, fontSize: 24, color: WHITE.dark}}>
+            style={{fontFamily: FONT.bold, fontSize: 18, color: WHITE.dark}}>
             {headerText}
           </Text>
         )}
@@ -79,6 +79,7 @@ function NotificationHeader({
           style={{alignItems: 'center', height: '100%', flexDirection: 'row'}}>
           <TouchableHighlight
             onPress={settingPress}
+            underlayColor={BLUE.app}
             style={{
               width: 20,
               height: 20,
@@ -92,6 +93,7 @@ function NotificationHeader({
           </TouchableHighlight>
           <TouchableHighlight
             onPress={() => setSearchToggle(true)}
+            underlayColor={BLUE.app}
             style={{
               width: 20,
               height: 20,

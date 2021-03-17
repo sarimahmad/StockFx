@@ -24,12 +24,12 @@ const FavouriteStyles = {
   FilterSearchImage: styled.Image`
     height: 20px;
     width: 20px;
-    marginHorizontal: 5px;
+    marginHorizontal: 10px;
     resizeMode: contain;
   `,
   FilterFollowingInput: styled.TextInput`
     height: 40px;
-    width: ${SCREEN.width - 90}px;
+    width: ${SCREEN.width - 100}px;
     border-radius: 10px;
     fontFamily: ${FONT.regular};
     fontSize: 14px;

@@ -41,7 +41,7 @@ function StockListItem({item, itemPress}) {
               }}>
               <Text
                 style={{fontFamily: FONT.bold, fontSize: 14, color: WHITE.app}}>
-                {item.amount}
+                ${item.amount}
               </Text>
             </View>
           </View>

@@ -30,6 +30,7 @@ export const WHITE = {
 
 export const BLUE = {
   app: 'rgba(21, 21, 59, 1)',
+  app_light: 'rgba(21, 21, 59, 0.8)',
   dark: 'rgba(16, 16, 46, 1)',
   background: 'rgba(15, 15, 45, 1)',
   light: 'rgba(164, 164, 254, 1)',

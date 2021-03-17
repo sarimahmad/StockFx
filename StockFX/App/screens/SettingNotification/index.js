@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import * as Actions from '../../redux/actions';
 import SettingNotificationStyles from './SettingNotificationStyles';
 import HeaderWithOptionBtn from '../../component/HeaderWithOptionBtn';
-import {BLUE} from '../../helper/Color';
+import {BLACK, BLUE, YELLOW} from '../../helper/Color';
 
 class SettingNotification extends Component {
   constructor(props) {
@@ -39,9 +39,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.portfolioUpdate}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.portfolioUpdate ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(portfolioUpdate) =>
                     this.setState({portfolioUpdate})
                   }
@@ -55,9 +60,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.coinUpdate}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.coinUpdate ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(coinUpdate) => this.setState({coinUpdate})}
                 />
               </SettingNotificationStyles.RightView>
@@ -69,9 +79,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.weekUpdate}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.weekUpdate ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(weekUpdate) => this.setState({weekUpdate})}
                 />
               </SettingNotificationStyles.RightView>
@@ -83,9 +98,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.newRelease}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.newRelease ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(newRelease) => this.setState({newRelease})}
                 />
               </SettingNotificationStyles.RightView>
@@ -97,9 +117,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.promUpdate}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.promUpdate ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(promUpdate) => this.setState({promUpdate})}
                 />
               </SettingNotificationStyles.RightView>
@@ -111,9 +136,14 @@ class SettingNotification extends Component {
               <SettingNotificationStyles.RightView>
                 <Switch
                   value={this.state.other}
-                  trackColor={{false: BLUE.dark, true: BLUE.app}}
-                  thumbColor={BLUE.light}
-                  ios_backgroundColor={BLUE.dark}
+                  trackColor={{
+                    false: BLACK.textColorDark,
+                    true: YELLOW.app,
+                  }}
+                  thumbColor={
+                    this.state.other ? BLUE.drawerLine : BLUE.light
+                  }
+                  ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(other) => this.setState({other})}
                 />
               </SettingNotificationStyles.RightView>

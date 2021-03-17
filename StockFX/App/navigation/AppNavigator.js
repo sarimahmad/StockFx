@@ -120,6 +120,8 @@ const CustomDrawerComponent = (props) => (
             }}
             source={require('../assets/profile_img.png')}
           />
+          <Text style={{fontSize: 14, fontFamily: FONT.bold, color: BLUE.light, marginTop: 20}}>Lord Ash</Text>
+          <Text style={{fontSize: 12, fontFamily: FONT.regular, color: BLUE.light}}>ash@lord.com</Text>
         </TouchableOpacity>
       </View>
       <View
@@ -127,7 +129,7 @@ const CustomDrawerComponent = (props) => (
       />
       <DrawerItems
         {...props}
-        iconContainerStyle={{width: 20}}
+        iconContainerStyle={{width: 30, alignItems: 'flex-end'}}
         itemStyle={{backgroundColor: BLUE.app}}
         labelStyle={{
           fontSize: 14,
@@ -188,7 +190,7 @@ const AppDrawerNavigator = createDrawerNavigator(
                 ? require('../assets/bottomTabIcon/stock_select.png')
                 : require('../assets/bottomTabIcon/stock_un_active.png')
             }
-            style={{height: 20, width: 20}}
+            style={{height: 20, width: 20, resizeMode: 'contain'}}
           />
         ),
       },
@@ -202,10 +204,10 @@ const AppDrawerNavigator = createDrawerNavigator(
           <Image
             source={
               focused
-                ? require('../assets/bottomTabIcon/stock_select.png')
+                ? require('../assets/profile_drawer_active.png')
                 : require('../assets/profile_drawer.png')
             }
-            style={{height: 20, width: 20}}
+            style={{height: 20, width: 20, resizeMode: 'contain'}}
           />
         ),
       },
@@ -219,10 +221,10 @@ const AppDrawerNavigator = createDrawerNavigator(
           <Image
             source={
               focused
-                ? require('../assets/bottomTabIcon/favourite_select.png')
-                : require('../assets/bottomTabIcon/favourite_un_active.png')
+                ? require('../assets/feedbck_drawer_selected.png')
+                : require('../assets/feedback_drawer_selected.png')
             }
-            style={{height: 20, width: 20}}
+            style={{height: 20, width: 20, resizeMode: 'contain'}}
           />
         ),
       },
@@ -236,8 +238,8 @@ const AppDrawerNavigator = createDrawerNavigator(
           <Image
             source={
               focused
-                ? require('../assets/bottomTabIcon/news_and_feed_select.png')
-                : require('../assets/bottomTabIcon/news_and_feed.png')
+                ? require('../assets/about_selected_drawer.png')
+                : require('../assets/about_drawer.png')
             }
             style={{height: 20, width: 20}}
           />
@@ -253,10 +255,10 @@ const AppDrawerNavigator = createDrawerNavigator(
           <Image
             source={
               focused
-                ? require('../assets/setting_drawer.png')
+                ? require('../assets/setting_drawer_selected.png')
                 : require('../assets/setting_drawer.png')
             }
-            style={{height: 20, width: 20}}
+            style={{height: 20, width: 20, resizeMode: 'contain'}}
           />
         ),
       },

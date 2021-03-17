@@ -20,6 +20,7 @@ function HeaderWithFavorite({ leftPress, headerText, headerIcon, rightPress, det
       }}>
       <TouchableHighlight
         onPress={searchToggle ? () => setSearchToggle(false) : leftPress}
+        underlayColor={BLUE.app}
         style={{
           width: 20,
           height: 20,

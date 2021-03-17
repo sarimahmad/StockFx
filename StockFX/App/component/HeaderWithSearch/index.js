@@ -26,7 +26,12 @@ function HeaderWithSearch({leftPress, headerText, searchChange, searchValue}) {
           alignItems: 'center',
         }}>
         <Image
-          source={searchToggle ? require('../../assets/back.png') : require('../../assets/menu_btn.png')}
+          underlayColor={BLUE.app}
+          source={
+            searchToggle
+              ? require('../../assets/back.png')
+              : require('../../assets/menu_btn.png')
+          }
           style={{height: 20, width: 20, resizeMode: 'contain'}}
         />
       </TouchableHighlight>
@@ -59,14 +64,15 @@ function HeaderWithSearch({leftPress, headerText, searchChange, searchValue}) {
           </View>
         ) : (
           <Text
-            style={{fontFamily: FONT.regular, fontSize: 24, color: WHITE.dark}}>
+            style={{fontFamily: FONT.regular, fontSize: 18, color: WHITE.dark}}>
             {headerText}
           </Text>
         )}
       </View>
-      {!searchToggle && (
+      {!searchToggle && searchValue !== undefined && (
         <TouchableHighlight
           onPress={() => setSearchToggle(true)}
+          underlayColor={BLUE.app}
           style={{
             width: 20,
             height: 20,

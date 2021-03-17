@@ -49,6 +49,7 @@ const SignInStyles = {
     fontFamily: ${FONT.bold};
     color: ${WHITE.dark};
     textAlign: center;
+    marginTop: 40px;
    `,
   BottomBtn: styled.TouchableHighlight`
     height: 40px;
@@ -122,6 +123,7 @@ const SignInStyles = {
     color: ${WHITE.dark};
     fontSize: 14px;
     marginVertical: 5px;
+    marginLeft: 20px;
   `,
   ForgotPassText:styled.Text`
     fontSize: 12px;
@@ -144,6 +146,18 @@ const SignInStyles = {
     fontSize: 14px;
     fontFamily: ${FONT.bold};
     color: ${BLUE.app};
+  `,
+  AbsoluteEyeIcon: styled.TouchableHighlight`
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+  `,
+  IconPass: styled.Image`
+    height: 18px;
+    width: 18px;
+    resizeMode: contain;
   `,
 };
 

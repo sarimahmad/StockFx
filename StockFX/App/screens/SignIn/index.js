@@ -84,8 +84,11 @@ class SignIn extends Component {
               onSubmitEditing={() => this.setState({passFocused: false})}
               placeholderTextColor={WHITE.dark}
             />
+            <SignInStyles.AbsoluteEyeIcon>
+              <SignInStyles.IconPass source={require('../../assets/eye_pass.png')} />
+            </SignInStyles.AbsoluteEyeIcon>
           </SignInStyles.TextInputWrapper>
-          <SignInStyles.ForgotPassText>
+          <SignInStyles.ForgotPassText style={{textDecorationLine: 'underline'}}>
             Forgot password?
           </SignInStyles.ForgotPassText>
           <SignInStyles.BottomBtnWrapper
