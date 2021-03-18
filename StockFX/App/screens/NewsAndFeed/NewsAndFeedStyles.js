@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components/native';
 import {BLUE, RED, WHITE} from '../../helper/Color';
-import {FONT, SCREEN} from '../../helper/Constant';
+import {FONT, isIphoneXorAbove, SCREEN} from '../../helper/Constant';
 
 const NewsAndFeedStyles = {
   WrapperViewVertical: styled.View`
     flex: 1;
     backgroundColor: ${BLUE.background};
+    paddingBottom: ${isIphoneXorAbove ? 80 : 60}px;
   `,
   SafeView: styled.SafeAreaView`
     flex: 1;
@@ -32,7 +33,7 @@ const NewsAndFeedStyles = {
     width: 120px;
     resizeMode: contain;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 10px;
   `,
   ItemImage: styled.Image`
