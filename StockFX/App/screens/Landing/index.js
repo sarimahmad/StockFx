@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {NavigationEvents} from 'react-navigation';
 
 import * as Actions from '../../redux/actions';
 import LandingStyles from './LandingStyles';
@@ -11,11 +10,6 @@ class Landing extends Component {
   render() {
     return (
       <LandingStyles.WrapperViewVertical>
-        <NavigationEvents
-          onDidFocus={(payload) => {
-            setTimeout(() => {}, 700);
-          }}
-        />
         <LandingStyles.BackgroundAbsoluteView
           source={require('../../assets/background/landing_back.png')}
         />
@@ -65,7 +59,7 @@ class Landing extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,

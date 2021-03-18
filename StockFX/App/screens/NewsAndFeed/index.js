@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -71,7 +72,7 @@ class NewsAndFeed extends Component {
     );
   };
 
-  _renderWeeklyAnalytics = ({item}) => {
+  _renderWeeklyAnalytics = ({}) => {
     return (
       <NewsAndFeedStyles.WeeklyAnalyticsWrapper>
         <NewsAndFeedStyles.WeeklyAnalyticsInnerWrapper>
@@ -149,7 +150,7 @@ class NewsAndFeed extends Component {
               horizontal={true}
               keyExtractor={(item, index) => index.toString()}
               data={['Following', 'Everything', 'Most Popular', 'High']}
-              renderItem={(item, index) => (
+              renderItem={(item) => (
                 <NewsAndFeedStyles.CategoryItemWrapper
                   onPress={() => this.setState({selectedIndex: item.index})}>
                   <NewsAndFeedStyles.CategorySelected
@@ -176,7 +177,7 @@ class NewsAndFeed extends Component {
           <NewsAndFeedStyles.NewsList
             keyExtractor={(item, index) => index.toString()}
             data={['', '', '', '']}
-            renderItem={(item, index) => (
+            renderItem={() => (
               <NewsAndFeedStyles.WeeklyAnalyticsWrapper
                 style={{marginBottom: 20}}>
                 <NewsAndFeedStyles.WeeklyAnalyticsInnerWrapper>

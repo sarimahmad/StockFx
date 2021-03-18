@@ -1,7 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {NavigationEvents} from 'react-navigation';
 
 import * as Actions from '../../redux/actions';
 import SignInStyles from './SignInStyles';
@@ -18,11 +18,6 @@ class SignIn extends Component {
   render() {
     return (
       <SignInStyles.WrapperViewVertical>
-        <NavigationEvents
-          onDidFocus={(payload) => {
-            setTimeout(() => {}, 700);
-          }}
-        />
         <SignInStyles.SafeView>
           <SignInStyles.OpenSans18Bold>
             Want a quick introduction about{'\n'}
@@ -85,10 +80,13 @@ class SignIn extends Component {
               placeholderTextColor={WHITE.dark}
             />
             <SignInStyles.AbsoluteEyeIcon>
-              <SignInStyles.IconPass source={require('../../assets/eye_pass.png')} />
+              <SignInStyles.IconPass
+                source={require('../../assets/eye_pass.png')}
+              />
             </SignInStyles.AbsoluteEyeIcon>
           </SignInStyles.TextInputWrapper>
-          <SignInStyles.ForgotPassText style={{textDecorationLine: 'underline'}}>
+          <SignInStyles.ForgotPassText
+            style={{textDecorationLine: 'underline'}}>
             Forgot password?
           </SignInStyles.ForgotPassText>
           <SignInStyles.BottomBtnWrapper
@@ -108,7 +106,7 @@ class SignIn extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,

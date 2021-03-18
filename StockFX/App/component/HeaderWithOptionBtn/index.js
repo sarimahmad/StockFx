@@ -18,8 +18,9 @@ function HeaderWithOptionBtn({ leftPress, headerText, leftIcon, rightPress, righ
         alignSelf: 'center',
         backgroundColor: backColor,
       }}>
-      {leftIcon && <TouchableHighlight
+      {leftPress && <TouchableHighlight
         onPress={searchToggle ? () => setSearchToggle(false) : leftPress}
+        underlayColor={backColor}
         style={{
           width: 20,
           height: 20,
@@ -27,7 +28,7 @@ function HeaderWithOptionBtn({ leftPress, headerText, leftIcon, rightPress, righ
           alignItems: 'center',
         }}>
         <Image
-          source={require('../../assets/back.png')}
+          source={leftIcon ? leftIcon : require('../../assets/back.png')}
           style={{height: 20, width: 20, resizeMode: 'contain'}}
         />
       </TouchableHighlight>}
@@ -44,6 +45,7 @@ function HeaderWithOptionBtn({ leftPress, headerText, leftIcon, rightPress, righ
         </View>
       </View>
       {rightIcon && <TouchableHighlight
+        underlayColor={backColor}
         onPress={rightPress}
         style={{
           width: 20,

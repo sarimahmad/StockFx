@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {Switch} from 'react-native';
@@ -12,10 +13,9 @@ class Setting extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coinUpdate: false
-    }
+      coinUpdate: false,
+    };
   }
-  
   render() {
     return (
       <SettingStyles.WrapperViewVertical>
@@ -96,8 +96,10 @@ class Setting extends Component {
                 />
               </SettingStyles.ItemRightView>
             </SettingStyles.ItemWrapper>
-            
-            <SettingStyles.OpenSans12Bold style={{marginTop: 30}}>Security</SettingStyles.OpenSans12Bold>
+
+            <SettingStyles.OpenSans12Bold style={{marginTop: 30}}>
+              Security
+            </SettingStyles.OpenSans12Bold>
             <SettingStyles.ItemWrapper>
               <SettingStyles.ItemInnerLeft>
                 <SettingStyles.OpenSans14Regular>
@@ -126,7 +128,7 @@ class Setting extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,

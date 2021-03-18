@@ -140,9 +140,7 @@ class SettingNotification extends Component {
                     false: BLACK.textColorDark,
                     true: YELLOW.app,
                   }}
-                  thumbColor={
-                    this.state.other ? BLUE.drawerLine : BLUE.light
-                  }
+                  thumbColor={this.state.other ? BLUE.drawerLine : BLUE.light}
                   ios_backgroundColor={BLACK.textColorDark}
                   onValueChange={(other) => this.setState({other})}
                 />

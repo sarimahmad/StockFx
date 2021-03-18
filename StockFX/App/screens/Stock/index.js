@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {Switch} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationEvents} from 'react-navigation';
 import {Chart, Area} from 'react-native-responsive-linechart';
 
 import * as Actions from '../../redux/actions';
@@ -26,11 +25,6 @@ class Splash extends Component {
   render() {
     return (
       <StockStyles.WrapperViewVertical>
-        <NavigationEvents
-          onDidFocus={(payload) => {
-            setTimeout(() => {}, 700);
-          }}
-        />
         <HeaderWithSearch
           leftPress={() => this.props.navigation.openDrawer()}
           headerText={'StockFX'}
@@ -44,7 +38,7 @@ class Splash extends Component {
               horizontal={true}
               keyExtractor={(item, index) => index.toString()}
               data={['All', 'US', 'Europe', 'Asia', 'Other']}
-              renderItem={(item, index) => (
+              renderItem={(item) => (
                 <StockStyles.CategoryItemWrapper
                   onPress={() => this.setState({selectedIndex: item.index})}>
                   <StockStyles.CategorySelected
@@ -75,7 +69,7 @@ class Splash extends Component {
                 horizontal={true}
                 keyExtractor={(item, index) => index.toString()}
                 data={GraphData}
-                renderItem={(item, index) => (
+                renderItem={(item) => (
                   <StockStyles.GraphItemWrapper
                     style={{
                       borderLeftColor: item.item.color,
@@ -184,7 +178,7 @@ class Splash extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+function mapStateToProps(state) {
   return {
     userDetail: state.user.userDetail,
     userToken: state.user.userToken,

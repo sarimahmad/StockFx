@@ -21,9 +21,7 @@ class Splash extends Component {
             }, 700);
           }}
         />
-        <SplashStyles.SplashIcon
-          source={require('../../assets/logo.png')}
-        />
+        <SplashStyles.SplashIcon source={require('../../assets/logo.png')} />
       </SplashStyles.WrapperViewVertical>
     );
   }
