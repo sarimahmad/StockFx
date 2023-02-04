@@ -35,7 +35,7 @@ import {BLUE, YELLOW} from '../helper/Color';
 import BottomNavContainer from './BottomNav';
 import {FONT, SCREEN} from '../helper/Constant';
 
-// https://github.com/react-community/react-navigation/issues/1254
+
 const noTransitionConfig = () => ({
   transitionSpec: {
     duration: 0.1,
